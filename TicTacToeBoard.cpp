@@ -41,7 +41,7 @@ Piece TicTacToeBoard::toggleTurn()
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
 
-	if(Piece test = getPiece(row,column) != Blank)
+	if((Piece test = getPiece(row,column)) != Blank)
 	{
 		return test;
 	}
