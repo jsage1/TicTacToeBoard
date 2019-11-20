@@ -41,7 +41,7 @@ TEST(TicTacToeBoardTest, tenturnchange)
 	ASSERT_EQ(returned, test);
 }
 
-TEST(TicTacToeBoardTest, oneturnchange)
+TEST(TicTacToeBoardTest, getpieceempty)
 {
 	TicTacToeBoard Game;
 	
