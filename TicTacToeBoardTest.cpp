@@ -14,7 +14,7 @@ class TicTacToeBoardTest : public ::testing::Test
 		virtual void TearDown(){} //clean up after each test, (before destructor) 
 };
 
-
+////turn change tests/////
 TEST(TicTacToeBoardTest, oneturnchange)
 {
 	TicTacToeBoard Game;
@@ -50,20 +50,69 @@ TEST(TicTacToeBoardTest, getemptyboard)
 	ASSERT_EQ(returned, test);
 }
 
-TEST(TicTacToeBoardTest, getinvalidboard)
+TEST(TicTacToeBoardTest, getpiece)
 {
 	TicTacToeBoard Game;
 	
-	Piece returned = Game.getPiece(100,100);
-	Piece test = Invalid;
+	Piece returned = Game.getPiece(0,0);
+	Piece test = Blank;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, getinvalidboard)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(1, 1);
+	Piece returned = Game.getPiece(1,1);
+	Piece test = O;
 	ASSERT_EQ(returned, test);
 }
 
 TEST(TicTacToeBoardTest, getwinneremptyboard)
 {
 	TicTacToeBoard Game;
-	
 	Piece returned = Game.getWinner();
 	Piece test = Blank;
 	ASSERT_EQ(returned, test);
 }
+
+TEST(TicTacToeBoardTest, getwinnercatsboard)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(0, 0);
+	Game.placePiece(0, 1);
+	Game.placePiece(0, 2);
+	Game.placePiece(1, 0);
+	Game.placePiece(1, 1);
+	Game.placePiece(1, 2);
+	Game.placePiece(2, 0);
+	Game.placePiece(2, 1);
+	Game.placePiece(2, 2);
+	Piece returned = Game.getWinner();
+	Piece test = Invalid;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, getwinnerhalfboard)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(0, 0);
+	Game.placePiece(2, 2);
+	Piece returned = Game.getWinner();
+	Piece test = Blank;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, getwinnerwinner)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(1, 1);
+		Game.toggleTurn();
+	Game.placePiece(0, 0);
+		Game.toggleTurn();
+	Game.placePiece(2, 2);
+	Piece returned = Game.getWinner();
+	Piece test = O;
+	ASSERT_EQ(returned, test);
+}
+
