@@ -88,8 +88,8 @@ TEST(TicTacToeBoardTest, getwinnercatsboard)
 	Game.placePiece(2, 0);
 	Game.placePiece(2, 1);
 	Game.placePiece(2, 2);
-	Piece returned = Game.getWinner();
-	Piece test = Invalid;
+	char returned = Game.getWinner();
+	char test = '?';
 	ASSERT_EQ(returned, test);
 }
 
