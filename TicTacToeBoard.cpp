@@ -40,7 +40,7 @@ Piece TicTacToeBoard::toggleTurn()
 **/ 
 Piece TicTacToeBoard::placePiece(int row, int column)
 {
-	Piece test
+
 	if(row > 3 || column >3)
 	{
 		Piece test = Invalid;
