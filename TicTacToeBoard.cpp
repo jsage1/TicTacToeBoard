@@ -102,7 +102,7 @@ Piece TicTacToeBoard::getWinner()
 		{
 			if(board[i][j] == Blank)
 			{
-				return Blank
+				return Blank;
 			}
 		}
 	}	
