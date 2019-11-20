@@ -59,3 +59,11 @@ TEST(TicTacToeBoardTest, getinvalidboard)
 	ASSERT_EQ(returned, test);
 }
 
+TEST(TicTacToeBoardTest, getwinneremptyboard)
+{
+	TicTacToeBoard Game;
+	
+	Piece returned = Game.getWinner();
+	Piece test = Blank;
+	ASSERT_EQ(returned, test);
+}
