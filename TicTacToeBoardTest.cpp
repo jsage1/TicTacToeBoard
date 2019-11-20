@@ -19,7 +19,7 @@ TEST(TicTacToeBoardTest, testingturn)
 {
 	TicTacToeBoard Game;
 	
-	piece fun = Game.toggleTurn();
-	piece test = 'X'
+	char fun = Game.toggleTurn();
+	char test = 'X'
 	ASSERT_EQ(fun, test);
 }
