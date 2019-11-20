@@ -19,8 +19,8 @@ TEST(TicTacToeBoardTest, oneturnchange)
 {
 	TicTacToeBoard Game;
 	
-	char returned = Game.toggleTurn();
-	char test = 'O';
+	Piece returned = Game.toggleTurn();
+	Piece test = O;
 	ASSERT_EQ(returned, test);
 }
 
@@ -36,8 +36,8 @@ TEST(TicTacToeBoardTest, tenturnchange)
 	Game.toggleTurn();//6 x
 	Game.toggleTurn();//7 o
 	Game.toggleTurn();//9 x
-	char returned = Game.toggleTurn();//10 o
-	char test = 'O';
+	Piece returned = Game.toggleTurn();//10 o
+	Piece test = O;
 	ASSERT_EQ(returned, test);
 }
 
