@@ -46,6 +46,6 @@ TEST(TicTacToeBoardTest, getpieceempty)
 	TicTacToeBoard Game;
 	
 	Piece returned = Game.getPiece(0,0);
-	Piece test = ' ';
+	Piece test = Blank;
 	ASSERT_EQ(returned, test);
 }
