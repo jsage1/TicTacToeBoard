@@ -15,11 +15,28 @@ class TicTacToeBoardTest : public ::testing::Test
 };
 
 
-TEST(TicTacToeBoardTest, testingturn)
+TEST(TicTacToeBoardTest, oneturnchange)
 {
 	TicTacToeBoard Game;
 	
 	char returned = Game.toggleTurn();
+	char test = 'O';
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, tenturnchange)
+{
+	TicTacToeBoard Game;
+	
+	Game.toggleTurn();//1 o
+	Game.toggleTurn();//2 x
+	Game.toggleTurn();//3 o
+	Game.toggleTurn();//4 x
+	Game.toggleTurn();//5 o
+	Game.toggleTurn();//6 x
+	Game.toggleTurn();//7 o
+	Game.toggleTurn();//9 x
+	char returned = Game.toggleTurn();//10 o
 	char test = 'O';
 	ASSERT_EQ(returned, test);
 }
