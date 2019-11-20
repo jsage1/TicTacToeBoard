@@ -41,7 +41,7 @@ TEST(TicTacToeBoardTest, tenturnchange)
 	ASSERT_EQ(returned, test);
 }
 
-TEST(TicTacToeBoardTest, getpieceempty)
+TEST(TicTacToeBoardTest, getemptyboard)
 {
 	TicTacToeBoard Game;
 	
@@ -49,3 +49,13 @@ TEST(TicTacToeBoardTest, getpieceempty)
 	Piece test = Blank;
 	ASSERT_EQ(returned, test);
 }
+
+TEST(TicTacToeBoardTest, getinvalidboard)
+{
+	TicTacToeBoard Game;
+	
+	Piece returned = Game.getPiece(100,100);
+	Piece test = Invalid;
+	ASSERT_EQ(returned, test);
+}
+
