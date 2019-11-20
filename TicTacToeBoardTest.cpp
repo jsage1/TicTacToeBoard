@@ -40,3 +40,12 @@ TEST(TicTacToeBoardTest, tenturnchange)
 	char test = 'O';
 	ASSERT_EQ(returned, test);
 }
+
+TEST(TicTacToeBoardTest, oneturnchange)
+{
+	TicTacToeBoard Game;
+	
+	char returned = game.getPiece(0,0);
+	char test = ' ';
+	ASSERT_EQ(returned, test);
+}
