@@ -81,13 +81,14 @@ TEST(TicTacToeBoardTest, getwinnercatsboard)
 	TicTacToeBoard Game;
 	Game.placePiece(0, 0);
 	Game.placePiece(0, 1);
-	Game.placePiece(0, 2);
-	Game.placePiece(1, 0);
 	Game.placePiece(1, 1);
+	Game.placePiece(2, 2);
 	Game.placePiece(1, 2);
+	Game.placePiece(1, 0);
+	Game.placePiece(0, 2);
 	Game.placePiece(2, 0);
 	Game.placePiece(2, 1);
-	Game.placePiece(2, 2);
+	
 	char returned = Game.getWinner();
 	char test = '?';
 	ASSERT_EQ(returned, test);
