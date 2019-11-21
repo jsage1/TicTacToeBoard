@@ -117,3 +117,25 @@ TEST(TicTacToeBoardTest, getwinnerwinner)
 	ASSERT_EQ(returned, test);
 }
 
+
+TEST(TicTacToeBoardTest, twopiecessamespot)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(0, 0);
+	Piece returned = Game.placePiece(0, 0);
+	Piece test = O;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, PlacingAfterGameOver)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(1, 1);
+		Game.toggleTurn();
+	Game.placePiece(0, 0);
+		Game.toggleTurn();
+	Game.placePiece(2, 2);
+	Piece returned = Game.placePiece(2, 1);
+	Piece test = Blank;
+	ASSERT_EQ(returned, test);
+}
