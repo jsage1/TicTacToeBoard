@@ -126,6 +126,19 @@ TEST(TicTacToeBoardTest, getwinnerdiagonal)
 	ASSERT_EQ(returned, test);
 }
 
+TEST(TicTacToeBoardTest, getwinnerdiagonal2)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(0, 2);
+		Game.toggleTurn();
+	Game.placePiece(1, 1);
+		Game.toggleTurn();
+	Game.placePiece(2, 0);
+	Piece returned = Game.getWinner();
+	Piece test = O;
+	ASSERT_EQ(returned, test);
+}
+
 TEST(TicTacToeBoardTest, getwinnervert)
 {
 	TicTacToeBoard Game;
