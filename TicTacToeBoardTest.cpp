@@ -68,6 +68,15 @@ TEST(TicTacToeBoardTest, getinvalidboard)
 	ASSERT_EQ(returned, test);
 }
 
+TEST(TicTacToeBoardTest, getinvalidplace)
+{
+	TicTacToeBoard Game;
+	
+	Piece returned = Game.placePiece(5, 5);
+	Piece test = Invalid;
+	ASSERT_EQ(returned, test);
+}
+
 TEST(TicTacToeBoardTest, getwinneremptyboard)
 {
 	TicTacToeBoard Game;
@@ -104,7 +113,7 @@ TEST(TicTacToeBoardTest, getwinnerhalfboard)
 	ASSERT_EQ(returned, test);
 }
 
-TEST(TicTacToeBoardTest, getwinnerwinner)
+TEST(TicTacToeBoardTest, getwinnerdiagonal)
 {
 	TicTacToeBoard Game;
 	Game.placePiece(1, 1);
@@ -112,6 +121,32 @@ TEST(TicTacToeBoardTest, getwinnerwinner)
 	Game.placePiece(0, 0);
 		Game.toggleTurn();
 	Game.placePiece(2, 2);
+	Piece returned = Game.getWinner();
+	Piece test = O;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, getwinnervert)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(0, 1);
+		Game.toggleTurn();
+	Game.placePiece(0, 0);
+		Game.toggleTurn();
+	Game.placePiece(0, 2);
+	Piece returned = Game.getWinner();
+	Piece test = O;
+	ASSERT_EQ(returned, test);
+}
+
+TEST(TicTacToeBoardTest, getwinnerhorizontal)
+{
+	TicTacToeBoard Game;
+	Game.placePiece(1, 0);
+		Game.toggleTurn();
+	Game.placePiece(0, 0);
+		Game.toggleTurn();
+	Game.placePiece(2, 0);
 	Piece returned = Game.getWinner();
 	Piece test = O;
 	ASSERT_EQ(returned, test);
